@@ -79,5 +79,43 @@ namespace WindowsFormsApp2
             conccion cnx = new conccion();
             dgbc.DataSource = cnx.consulataconresul("select * from usuario");
         }
+
+        private void txtbusc_TextChanged(object sender, EventArgs e)
+        {
+
+
+            conccion oper = new conccion();
+            if (cmbbuscar.Text == ("ID"))
+            {
+                dgbc.DataSource = oper.consulataconresul("select * from usuario where u_id like '%" + txtbusc.Text + "%'");
+
+
+            }
+            else if (cmbbuscar.Text == ("Nombre"))
+            {
+                dgbc.DataSource = oper.consulataconresul("select * from usuario where nombre like '%" + txtbusc.Text + "%'");
+
+            }
+            else if (cmbbuscar.Text == ("Apellido"))
+            {
+                dgbc.DataSource = oper.consulataconresul("select * from usuario where apellido like '%" + txtbusc.Text + "%'");
+            }
+
+            else if (cmbbuscar.Text == ("Direccion"))
+            {
+                dgbc.DataSource = oper.consulataconresul("select * from usuario where direccion like '%" + txtbusc.Text + "%'");
+            }
+
+            else if (cmbbuscar.Text == ("Telefono"))
+            {
+                dgbc.DataSource = oper.consulataconresul("select * from usuario where telefono like '%" + txtbusc.Text + "%'");
+            }
+
+        }
+
+        private void cmbbuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
