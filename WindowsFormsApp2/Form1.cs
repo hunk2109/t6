@@ -76,8 +76,8 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            conccion oper = new conccion();
-            dgbc.DataSource = oper.consulataconresul("select * from usuario");
+            conccion cnx = new conccion();
+            dgbc.DataSource = cnx.consulataconresul("select * from usuario");
         }
     }
 }
